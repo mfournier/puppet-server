@@ -39,6 +39,10 @@ public class RegisteredLinkedBlockingDeque<E> extends LinkedBlockingDeque<E> {
         putLast(e);
     }
 
+    synchronized public void unregister(E e) throws InterruptedException {
+        registeredElements.remove(e);
+    }
+
     /**
      * @return a set of all of the known elements that have been registered with
      *         this queue.
